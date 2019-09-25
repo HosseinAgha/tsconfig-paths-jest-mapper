@@ -1,8 +1,7 @@
-Convert your tsconfig paths to jest `moduleNameMappers`.
-I created this as [tsconfig-paths-jest](https://www.npmjs.com/package/tsconfig-paths-jest) is not maintained anymore (archived).  
-Specially this package will escape the special character like `$` in `$components`.
+Convert your tsconfig paths to jest `moduleNameMappers`.  
+This introduces many bug fixes and improvements to [archived](https://github.com/ryohey/tsconfig-paths-jest) [tsconfig-paths-jest](https://www.npmjs.com/package/tsconfig-paths-jest) package.  
 
-# Usage
+## Usage
 In your `jest.config.js` file:  
 ```javascript
 const getJestMappersFromTSConfig = require('tsconfig-paths-jest-mapper');
