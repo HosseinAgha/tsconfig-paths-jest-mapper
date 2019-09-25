@@ -1,6 +1,6 @@
 {
   "name": "tsconfig-paths-jest-mapper",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": {
@@ -15,7 +15,8 @@
     "prepare": "npm run compile",
     "precompile": "rimraf dist",
     "compile": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "TypeScript",
@@ -34,7 +35,8 @@
     "@types/node": "^12.7.7",
     "jest": "^24.9.0",
     "rimraf": "^3.0.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "semantic-release": "^15.13.24"
   },
   "dependencies": {
     "tsconfig": "^7.0.0"
