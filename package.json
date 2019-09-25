@@ -3,12 +3,27 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HosseinAgha/tsconfig-paths-jest-mapper.git"
+  },
+  "author": {
+    "name": "Hossein Saniei",
+    "email": "h.saniei@gmail.com"
+  },
   "scripts": {
     "prepare": "npm run compile",
     "precompile": "rimraf dist",
     "compile": "tsc",
     "test": "jest"
   },
+  "keywords": [
+    "TypeScript",
+    "jest",
+    "config",
+    "tsconfig",
+    "tsconfig-paths"
+  ],
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
