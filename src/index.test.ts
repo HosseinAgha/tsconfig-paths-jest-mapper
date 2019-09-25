@@ -10,6 +10,8 @@ describe('test lib', () => {
     const mappers = tsconfigPathsJestMapper(path.resolve(__dirname, '../test/right-config'));
     expect(mappers).toEqual({
       "\\$components/(.*)": "<rootDir>/src/components/$1",
+      "\\$errors/(.*)": "<rootDir>/src/errors/$1",
+      "\\$errors": "<rootDir>/src/errors/index.ts",
       "@app/(.*)": "<rootDir>/src/app/$1"
     })
   })

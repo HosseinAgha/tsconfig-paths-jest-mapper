@@ -4,6 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "$components/*": ["src/components/*"],
+      "$errors": ["src/errors/index.ts"],
+      "$errors/*": ["src/errors/*"],
       "@app/*": ["src/app/*"]
     }
   }
