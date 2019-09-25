@@ -9,10 +9,10 @@ describe('test lib', () => {
   it('should convert paths to jest moduleNameMapper', () => {
     const mappers = tsconfigPathsJestMapper(path.resolve(__dirname, '../test/right-config'));
     expect(mappers).toEqual({
-      "\\$components/(.*)": "<rootDir>/src/components/$1",
-      "\\$errors/(.*)": "<rootDir>/src/errors/$1",
-      "\\$errors": "<rootDir>/src/errors/index.ts",
-      "@app/(.*)": "<rootDir>/src/app/$1"
+      "\\$main": "<rootDir>/src/index.ts",
+      "\\$components(/?.*)": "<rootDir>/src/components$1",
+      "\\$errors(/?.*)": "<rootDir>/src/errors$1",
+      "@app(/?.*)": "<rootDir>/src/app$1"
     })
   })
 

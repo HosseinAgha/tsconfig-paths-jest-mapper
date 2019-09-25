@@ -14,14 +14,22 @@ export const getJestMappersFromTSConfig = (tsconfigPath: string) => {
 
   const paths: Record<string, string[]> = config.compilerOptions.paths;
   const moduleNameMapper: Record<string, string> = {};
-  for (let [key, valueArray] of Object.entries(paths)) {
+  let pathKeys = Object.keys(paths);
+  // remove equivalant paths: we don't need $errors when we have $errors/*
+  pathKeys = pathKeys.filter((key) => {
+    const keyRegExp = new RegExp(`^${escapeRegExp(key).replace('*', '\\*')}`);
+    return !pathKeys.some((k) => key !== k && keyRegExp.test(k));
+  })
+
+  for (const key of pathKeys) {
+    const valueArray = paths[key];
     if (!Array.isArray(valueArray) || valueArray.length !== 1) {
       throw new Error(`paths should be an array with exactly one element for mapping to work.\n Check value of: ${key}`);
     }
 
     const [ value ] = valueArray;
-    const source = escapeRegExp(key).replace(/\*/, "(.*)");
-    const path = `<rootDir>/${value.replace(/\*/, "$1")}`;
+    const source = escapeRegExp(key).replace(/\/\*/, "(/?.*)");
+    const path = `<rootDir>/${value.replace(/\/?\*/, "$1")}`;
     moduleNameMapper[source] = path;
   }
 

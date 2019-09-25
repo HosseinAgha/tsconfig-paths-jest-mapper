@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "$main": ["src/index.ts"],
       "$components/*": ["src/components/*"],
       "$errors": ["src/errors/index.ts"],
       "$errors/*": ["src/errors/*"],
