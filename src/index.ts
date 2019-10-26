@@ -6,7 +6,7 @@ function escapeRegExp(text: string) {
   return text.replace(/[-[\]{}()+?.,\\^$|#\s]/g, '\\$&');
 }
 
-export const getJestMappersFromTSConfig = (tsconfigPath: string) => {
+export const getJestMappersFromTSConfig = (tsconfigPath: string, options: { startsWith: boolean } = { startsWith: true }) => {
   const { config } = loadSync('', tsconfigPath);
   if (!config.compilerOptions || !config.compilerOptions.paths) {
     throw new Error('paths field not found in tsconfig compiler options');
@@ -28,7 +28,10 @@ export const getJestMappersFromTSConfig = (tsconfigPath: string) => {
     }
 
     const [ value ] = valueArray;
-    const source = escapeRegExp(key).replace(/\/\*/, "(/?.*)");
+    let source = escapeRegExp(key).replace(/\/\*/, "(/?.*)");
+    if(options.startsWith) {
+      source = `^${source}`;
+    }
     const path = `<rootDir>/${value.replace(/\/?\*/, "$1")}`;
     moduleNameMapper[source] = path;
   }

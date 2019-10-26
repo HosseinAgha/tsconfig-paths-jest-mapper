@@ -26,3 +26,7 @@ module.exports = {
   // ... other configs
 }
 ```
+
+## Options
+
+- __startsWith:__ ensures that all the replaced paths (keys in the tsconfig) happen at the beginning of the path. is `true` by default.

@@ -6,8 +6,18 @@ describe('test lib', () => {
     tsconfigPathsJestMapper(path.resolve(__dirname, '../test/right-config'));
   })
 
-  it('should convert paths to jest moduleNameMapper', () => {
+  it('should convert paths to jest moduleNameMapper when they start with pattern', () => {
     const mappers = tsconfigPathsJestMapper(path.resolve(__dirname, '../test/right-config'));
+    expect(mappers).toEqual({
+      "^\\$main": "<rootDir>/src/index.ts",
+      "^\\$components(/?.*)": "<rootDir>/src/components$1",
+      "^\\$errors(/?.*)": "<rootDir>/src/errors$1",
+      "^@app(/?.*)": "<rootDir>/src/app$1"
+    })
+  })
+
+  it('should convert paths to jest moduleNameMapper everywhere', () => {
+    const mappers = tsconfigPathsJestMapper(path.resolve(__dirname, '../test/right-config'), { startsWith: false });
     expect(mappers).toEqual({
       "\\$main": "<rootDir>/src/index.ts",
       "\\$components(/?.*)": "<rootDir>/src/components$1",
