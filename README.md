@@ -1,3 +1,8 @@
+<!-- [START badges] -->
+[![NPM ndb package](https://img.shields.io/npm/v/tsconfig-paths-jest-mapper)](https://npmjs.org/package/ndb)
+[![CircleCI](https://circleci.com/gh/HosseinAgha/vscode-open-react-component-style.svg?style=svg)](https://circleci.com/gh/HosseinAgha/vscode-open-react-component-style)
+<!-- [END badges] -->
+
 Convert your tsconfig paths to jest `moduleNameMappers`.  
 This introduces many bug fixes and improvements to [archived](https://github.com/ryohey/tsconfig-paths-jest) [tsconfig-paths-jest](https://www.npmjs.com/package/tsconfig-paths-jest) package.  
 
@@ -29,4 +34,4 @@ module.exports = {
 
 ## Options
 
-- __startsWith:__ ensures that all the replaced paths (keys in the tsconfig) happen at the beginning of the path. is `true` by default.
+- __startsWith:__ ensures that all the replaced paths (keys in the tsconfig) happen at the beginning of the path. `true` by default.
