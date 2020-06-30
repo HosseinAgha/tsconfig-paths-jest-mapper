@@ -1,5 +1,5 @@
 <!-- [START badges] -->
-[![NPM ndb package](https://img.shields.io/npm/v/tsconfig-paths-jest-mapper)](https://npmjs.org/package/ndb)
+[![NPM ndb package](https://img.shields.io/npm/v/tsconfig-paths-jest-mapper)](https://www.npmjs.com/package/tsconfig-paths-jest-mapper)
 [![CircleCI](https://circleci.com/gh/HosseinAgha/vscode-open-react-component-style.svg?style=svg)](https://circleci.com/gh/HosseinAgha/vscode-open-react-component-style)
 <!-- [END badges] -->
 
